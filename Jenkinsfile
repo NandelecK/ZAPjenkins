@@ -1,9 +1,16 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'owasp/zap2docker-stable'
+      args '''-p 3000:3000
+'''
+    }
+
+  }
   stages {
     stage('initialize') {
       steps {
-        echo 'hello world (BOjenkins)'
+        echo 'run owasp zap dock'
       }
     }
   }
