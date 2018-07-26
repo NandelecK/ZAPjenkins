@@ -1,9 +1,7 @@
 pipeline {
   agent {
-    docker {
-      image 'owasp/zap2docker-stable'
-      args '''-p 3000:3000
-'''
+    dockerfile {
+      filename 'owasp/zap2docker-stable'
     }
 
   }
