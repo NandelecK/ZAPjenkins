@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        echo 'run owasp zap dock'
+        echo 'run owasp zap dock gg'
       }
     }
   }
