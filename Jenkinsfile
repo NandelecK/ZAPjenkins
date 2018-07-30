@@ -4,8 +4,8 @@ pipeline {
     stage('build') {
       agent {
         docker {
-          image 'owasp/zap2docker'
           args '-d -p 8090:8090'
+          image 'owasp/zap2docker-stable'
         }
 
       }
