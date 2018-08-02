@@ -8,9 +8,18 @@ pipeline {
   }
   stages {
     stage('build') {
-      agent any
-      steps {
-        echo 'run owasp zap dock gg'
+      parallel {
+        stage('build') {
+          agent any
+          steps {
+            echo 'run owasp zap dock gg'
+          }
+        }
+        stage('') {
+          steps {
+            build 'ZAP local'
+          }
+        }
       }
     }
   }
