@@ -1,7 +1,8 @@
 pipeline {
   agent {
     docker {
-      image 'hello-world'
+      image 'owasp/zap2docker-stable'
+      args '-d -t -p 8080:8090'
     }
 
   }
