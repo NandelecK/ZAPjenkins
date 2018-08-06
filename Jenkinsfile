@@ -8,9 +8,18 @@ pipeline {
   }
   stages {
     stage('build') {
-      agent any
-      steps {
-        echo 'hello worl ?'
+      parallel {
+        stage('build') {
+          agent any
+          steps {
+            echo 'hello worl ?'
+          }
+        }
+        stage('') {
+          steps {
+            sh 'zapr --summary http://192.168.222.177/mutillidae/'
+          }
+        }
       }
     }
   }
