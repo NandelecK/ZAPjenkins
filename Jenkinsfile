@@ -8,9 +8,18 @@ pipeline {
   }
   stages {
     stage('build') {
-      agent any
-      steps {
-        echo 'hello world ?'
+      parallel {
+        stage('build') {
+          agent any
+          steps {
+            echo 'hello world ?'
+          }
+        }
+        stage('') {
+          steps {
+            sh 'echo hello'
+          }
+        }
       }
     }
   }
