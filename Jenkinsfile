@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'owasp/zap2docker-stable'
-      args '-d -t --name jenkinZAP'
+      args '-d -t --name jenkinzap'
     }
 
   }
