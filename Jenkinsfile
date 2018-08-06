@@ -14,4 +14,7 @@ pipeline {
       }
     }
   }
+  environment {
+    port = '8090'
+  }
 }
