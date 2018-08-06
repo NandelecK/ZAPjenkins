@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'owasp/zap2docker-stable'
-      args '-d -t -p 8090:8080 -host 127.0.0.1'
+      args '-d -t -p 8090:8080'
     }
 
   }
